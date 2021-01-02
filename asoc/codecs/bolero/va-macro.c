@@ -2572,17 +2572,9 @@ static const struct snd_kcontrol_new va_macro_snd_controls[] = {
 			  0, -84, 40, digital_gain),
     SOC_ENUM_EXT("VA_mic_clk", va_mic_clk_enum,
 			va_macro_mic_clk_get, va_macro_mic_clk_put),
-};
-
-static const struct snd_kcontrol_new va_macro_snd_controls_common[] = {
-	SOC_SINGLE_SX_TLV("VA_DEC0 Volume",
-			  BOLERO_CDC_VA_TX0_TX_VOL_CTL,
-			  0, -84, 40, digital_gain),
-	SOC_SINGLE_SX_TLV("VA_DEC1 Volume",
-			  BOLERO_CDC_VA_TX1_TX_VOL_CTL,
-			  0, -84, 40, digital_gain),
 	SOC_SINGLE_EXT("LPI Enable", 0, 0, 1, 0,
 		va_macro_lpi_get, va_macro_lpi_put),
+
 	SOC_ENUM_EXT("VA_DEC0 MODE", dec_mode_mux_enum,
 			va_macro_dec_mode_get, va_macro_dec_mode_put),
 
@@ -2594,6 +2586,17 @@ static const struct snd_kcontrol_new va_macro_snd_controls_common[] = {
 
 	SOC_ENUM_EXT("VA_DEC3 MODE", dec_mode_mux_enum,
 			va_macro_dec_mode_get, va_macro_dec_mode_put),
+};
+
+static const struct snd_kcontrol_new va_macro_snd_controls_common[] = {
+	SOC_SINGLE_SX_TLV("VA_DEC0 Volume",
+			  BOLERO_CDC_VA_TX0_TX_VOL_CTL,
+			  0, -84, 40, digital_gain),
+	SOC_SINGLE_SX_TLV("VA_DEC1 Volume",
+			  BOLERO_CDC_VA_TX1_TX_VOL_CTL,
+			  0, -84, 40, digital_gain),
+	SOC_SINGLE_EXT("LPI Enable", 0, 0, 1, 0,
+		va_macro_lpi_get, va_macro_lpi_put),
 };
 
 static const struct snd_kcontrol_new va_macro_snd_controls_v3[] = {
